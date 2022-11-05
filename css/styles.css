@@ -384,6 +384,20 @@ body {
   transition: border 250ms var(--timing);
 }
 
+.modal-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transition: fill 250ms var(--timing);
+}
+
+.form-input:focus + .modal-icon,
+.form-input:focus.form-input {
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
+  outline: transparent;
+}
+
 .form-textarea {
   resize: none;
   padding: 12px 16px;
@@ -399,68 +413,47 @@ body {
 	color: rgba(117, 117, 117, 0.5);
 }
 
-.form-checkbox {
-  display: flex;
-  align-items: center;
-
-  margin-top: 20px;
-	padding-left: 16px;
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--title-text-color);
-}
-
-.form-checkbox-input {
-  margin-right: 8px;
-	width: 16px;
-	height: 15px;
-	opacity: 1;
-}
-
-.form-checkbox-input:checked {
-	opacity: 0;
-}
-
-.form-checkbox-input:checked + .check-icon {
-	opacity: 1;
-	transition: opacity 250ms var(--timing);
-}
-
-.form-checkbox .link {
-  color: var(--accent-color);
-  margin-left: 4px;
-}
-
-.check-position {
-	position: relative;
-}
-
-.check-icon {
-	position: absolute;
-	display: block;
-	top: 3px;
-	left: 0;
-	opacity: 0;
-	transition: opacity 250ms var(--timing);
-}
-
-.modal-icon {
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transition: fill 250ms var(--timing);
-}
-
-.form-input:focus + .modal-icon,
-.form-input:focus.form-input {
-  fill: var(--accent-color);
-  border-color: var(--accent-color);
-  outline: transparent;
-}
-
 .form-textarea:focus.form-textarea {
 	border-color: var(--accent-color);
 	outline: transparent;
+}
+
+.checkbox-lable {
+	display: flex;
+	align-items: center;
+	margin-top: 20px;
+	margin-left: 12px;
+
+}
+
+.checkbox-lable .icon {
+	display: block;
+	margin-right: 8px;
+	width: 15px;
+	height: 15px;
+	border: 2px solid var(--primary-text-color);
+	border-radius: 4px;
+	transition: background-color 250ms var(--timing),
+	border 250ms var(--timing);
+}
+
+.checkbox-input:checked + .icon {
+	background-color: var(--accent-color);
+	background-image: url(../image/check.svg);
+	border: transparent;
+	background-size: contain;
+	background-origin: border-box;
+}
+
+.options {
+	display: block;
+	font-size: 14px;
+	line-height: 1.7;
+	color: var(--title-text-color);
+}
+
+.checkbox-lable .link {
+	color: var(--accent-color);
 }
 
 /* * |||||| advantages |||||  */
